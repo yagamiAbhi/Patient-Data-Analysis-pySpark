@@ -38,22 +38,22 @@ Schema: RegNo: STRING, AmountPaid: LONG, TotalAmount: LONG
 
 **Implement the below data analysis requirements:**
 
-* Create three RDDs patientRegistrationRDD, billTillDateRDD and companyInsuranceRDD by consuming data from PatientRegistrationData.csv, BillTillDate.txt and CompanyInsuranceData.csv files respectively.
+1. Create three RDDs patientRegistrationRDD, billTillDateRDD and companyInsuranceRDD by consuming data from PatientRegistrationData.csv, BillTillDate.txt and CompanyInsuranceData.csv files respectively.
 
-* Create a separate RDD out of patientRegistrationRDD as patientToBeDischargedRDD for those patients whose background status is “COMPLETED” and discharge approval is “POSITIVE”
+2. Create a separate RDD out of patientRegistrationRDD as patientToBeDischargedRDD for those patients whose background status is “COMPLETED” and discharge approval is “POSITIVE”
 
-* Convert the four RDDs into Spark SQL Data Frames. patientRegistrationRDD to patientRegistrationDf, billTillDateRDD to billTillDateDf, companyInsuranceRDD to companyInsuranceDf and patientToBeDischargedRDD to patientToBeDischargedDf
+3. Convert the four RDDs into Spark SQL Data Frames. patientRegistrationRDD to patientRegistrationDf, billTillDateRDD to billTillDateDf, companyInsuranceRDD to companyInsuranceDf and patientToBeDischargedRDD to patientToBeDischargedDf
 
-* Check whether InsuranceId in patientToBeDischargedDf matches with any InsuranceId in companyInsuranceDf. Consider the patient with RegNo=18 for this requirement
+4. Check whether InsuranceId in patientToBeDischargedDf matches with any InsuranceId in companyInsuranceDf. Consider the patient with RegNo=18 for this requirement
 
-* Store the details of patient to ApprovedDf, if the InsuranceId in companyInsuranceDf and background status is “COMPLETED” and discharge approval is “POSITIVE”.
+5. Store the details of patient to ApprovedDf, if the InsuranceId in companyInsuranceDf and background status is “COMPLETED” and discharge approval is “POSITIVE”.
 
-* For approved patient, calculate the remaining amount to be paid from BillTillDate data.
+6. For approved patient, calculate the remaining amount to be paid from BillTillDate data.
 
-* Calculate the amount covered by the insurance as per the percentage cover given by the company up to a certain limit.
+7. Calculate the amount covered by the insurance as per the percentage cover given by the company up to a certain limit.
 
-* Calculate the final fee by deducting the insurance covered amount from the remaining amount.
+8. Calculate the final fee by deducting the insurance covered amount from the remaining amount.
 
-* Print RegNo, PatientName, Age, DBO, Gender, BloodG, Department, Doctor, CompanyName, FinalBillAmount on the console and save the details in HDFS.
+9. Print RegNo, PatientName, Age, DBO, Gender, BloodG, Department, Doctor, CompanyName, FinalBillAmount on the console and save the details in HDFS.
 
-* Create RDD with the data generated from question 9. Find out the total amount claimed from each company by Healthy-You Patients. (Use GroupByKey() as well as ReduceByKey() transformations and see which has better performance.)
+10. Create RDD with the data generated from question 9. Find out the total amount claimed from each company by Healthy-You Patients. (Use GroupByKey() as well as ReduceByKey() transformations and see which has better performance.)
